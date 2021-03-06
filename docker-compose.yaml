@@ -1,5 +1,8 @@
 version: "3"
 services:
+  db:
+    image: postgres:10-alpine
+    env_file: .env
   web:
     build: ./web
     ports:
@@ -10,5 +13,4 @@ services:
     depends_on:
       - db
     env_file: .env
-  db:
-    image: postgres:10-alpine
+
